@@ -130,3 +130,39 @@ body {
 }
 
 /* Media Queries */
+@media (min-width: 992px) {
+  .card {
+    flex-direction: row-reverse; /* Places image on the right */
+    max-width: 900px; /* Adjust width as needed */
+    text-align: left; /* Align text to the left for readability */
+  }
+
+  .card__stats {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+
+  }
+
+  /* Image Card */
+
+  .card__image {
+    background-image: url('./../images/image-header-desktop.jpg'); /* Larger screen image */
+    width: 50%; /* Adjust width to occupy less space */
+    height: 350px;
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center;
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .card__hero {
+    width: 50%; /* Adjust remaining space for the hero content */
+    padding: 2rem; /* Add padding for desktop spacing */
+  }
+
+  
+}
