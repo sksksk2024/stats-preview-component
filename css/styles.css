@@ -1,0 +1,132 @@
+/* Default */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Utitlities */
+h1 {
+  font-family: 'Inert', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* Variables */
+
+:root {
+  --very-dark-blue-main-bg: hsl(233, 47%, 7%);
+  --dark-desaturated-blue-card-bg: hsl(244, 38%, 16%);
+  --soft-violet-accent: hsl(277, 64%, 61%);
+  --white-main-head-stats: hsl(0, 0%, 100%);
+  --slightly-transparent-white-main-p: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white-stat-head: hsla(0, 0%, 100%, 0.6);
+}
+
+html,
+body {
+  background-color: var(--very-dark-blue-main-bg);
+  font-size: 1.1rem;
+  line-height: 1.1;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+}
+
+/* Card */
+
+/* Image */
+
+.card__image {
+  padding: 0;
+  margin: 0;
+  background-image: url('./../images/image-header-mobile.jpg');
+  height: fit-content;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  position: relative;
+  background-size: cover; /* Makes the image cover the entire area */
+  background-position: center; /* Centers the image */
+  width: 100%; /* Ensures .card__image is responsive */
+  padding-top: 73%;/* Maintains a 16:9 aspect ratio */
+}
+
+.card__image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--soft-violet-accent);
+  opacity: 0.8;
+  pointer-events: none; /* Ensures the overlay doesn't interfere with any interactions */
+}
+
+/* Rest Styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--dark-desaturated-blue-card-bg);
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden; /* Ensures .card__image border-radius matches card */
+}
+
+.card__hero {
+  padding: 1.5rem;
+}
+
+.card__title {
+  color: var(--white-main-head-stats);
+}
+
+.card__title-target1 {
+  color: var(--soft-violet-accent);
+}
+
+.card__description {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--slightly-transparent-white-main-p);
+}
+
+.card__stats-char {
+  font-family: 'Inert', sans-serif;
+  font-weight: 300;
+  color: var(--slightly-transparent-white-stat-head);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+.card__stats-char-target {
+  font-size: 2rem;
+  color: var(--white-main-head-stats);
+  font-weight: 700;
+}
+
+/* Media Queries */
